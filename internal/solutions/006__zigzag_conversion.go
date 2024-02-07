@@ -50,6 +50,8 @@ func MapIndexToRow(number int, modulo int) int {
 	return int(math.Min(res, m-res))
 }
 
+// Convert is the sixth LeetCode problem:
+// - https://leetcode.com/problems/zigzag-conversion/
 func Convert(s string, numRows int) string {
 	if numRows <= 1 {
 		return s

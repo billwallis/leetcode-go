@@ -15,6 +15,8 @@ func get(nums []int, index int) int {
 	return nums[index]
 }
 
+// FindMedianSortedArrays is the fourth LeetCode problem:
+// - https://leetcode.com/problems/median-of-two-sorted-arrays/
 func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	// Walk through the arrays until we reach the "middle".
 	//

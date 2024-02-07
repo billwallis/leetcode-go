@@ -21,6 +21,8 @@ func IsPalindrome(s string) bool {
 	return true
 }
 
+// LongestPalindrome is the fifth LeetCode problem:
+// - https://leetcode.com/problems/longest-palindromic-substring/
 func LongestPalindrome(s string) string {
 	results := &Results{}
 	for i := 0; i < len(s); i++ {
