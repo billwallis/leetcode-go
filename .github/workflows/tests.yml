@@ -1,9 +1,9 @@
 ---
-name: Tests ✅
+name: Tests
 
 on:
   pull_request:
-  push: { branches: [ "main" ] }
+  push: { branches: [ "main" ] } # Just because I'm being naughty and pushing directly to main
 
 jobs:
   tests:
