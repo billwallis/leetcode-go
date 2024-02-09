@@ -5,6 +5,26 @@ import (
 	"testing"
 )
 
+func TestIndexOf(t *testing.T) {
+	var tests = []struct {
+		element any
+		data    []any
+		want    int
+	}{
+		{element: "b", data: []any{"a", "b", "c"}, want: 1},
+		{element: "x", data: []any{"a", "b", "c"}, want: -1},
+		{element: 0, data: []any{0, 1, 2}, want: 0},
+		{element: 4, data: []any{0, 1, 2}, want: -1},
+	}
+
+	for _, test := range tests {
+		got := solutions.IndexOf(test.element, test.data)
+		if got != test.want {
+			t.Fatalf(`IndexOf(%v, %v) == %d, want %d`, test.element, test.data, got, test.want)
+		}
+	}
+}
+
 func TestLengthOfLongestSubstring(t *testing.T) {
 	var tests = []struct {
 		text string

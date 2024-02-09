@@ -1,8 +1,8 @@
 package solutions
 
-// indexOf is a helper function for LengthOfLongestSubstring.
+// IndexOf is a helper function for LengthOfLongestSubstring.
 // It returns the index of an element in a slice.
-func indexOf(element any, data []any) int {
+func IndexOf(element any, data []any) int {
 	// Nicked from https://stackoverflow.com/q/8307478/8213085
 	for index, value := range data {
 		if element == value {
@@ -19,7 +19,7 @@ func LengthOfLongestSubstring(s string) int {
 	var maxLength = 0
 
 	for _, char := range s {
-		index := indexOf(char, chars)
+		index := IndexOf(char, chars)
 		chars = append(chars, char)
 
 		if index == -1 {
