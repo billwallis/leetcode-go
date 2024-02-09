@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestIsPalindrome(t *testing.T) {
+func TestIsPalindrome_(t *testing.T) {
 	var tests = []struct {
 		s    string
 		want bool
@@ -15,7 +15,7 @@ func TestIsPalindrome(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		if got := solutions.IsPalindrome(test.s); got != test.want {
+		if got := solutions.IsPalindrome_(test.s); got != test.want {
 			t.Fatalf(`IsPalindrome(%s) = %v, want %v`, test.s, got, test.want)
 		}
 	}

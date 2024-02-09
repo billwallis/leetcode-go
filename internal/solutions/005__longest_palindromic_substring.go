@@ -16,8 +16,8 @@ func (results *Results) UpdateIfLarger(str string) {
 	}
 }
 
-// IsPalindrome checks whether a string is a palindrome.
-func IsPalindrome(s string) bool {
+// isPalindrome checks whether a string is a palindrome.
+func isPalindrome(s string) bool {
 	for i := 0; i < len(s)/2; i++ {
 		if s[i] != s[len(s)-1-i] {
 			return false
@@ -25,6 +25,8 @@ func IsPalindrome(s string) bool {
 	}
 	return true
 }
+
+var IsPalindrome_ = isPalindrome /* For testing */
 
 // LongestPalindrome is the fifth LeetCode problem:
 // - https://leetcode.com/problems/longest-palindromic-substring/
@@ -34,7 +36,7 @@ func LongestPalindrome(s string) string {
 		for j := i; j < len(s); j++ {
 			word := s[i : j+1]
 
-			if IsPalindrome(word) {
+			if isPalindrome(word) {
 				results.UpdateIfLarger(word)
 			}
 		}
