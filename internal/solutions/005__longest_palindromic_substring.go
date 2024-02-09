@@ -1,10 +1,14 @@
 package solutions
 
+// Results is a helper struct for LongestPalindrome.
+// It stores the current longest palindrome and its length.
 type Results struct {
 	length int
 	word   string
 }
 
+// UpdateIfLarger updates the results if the new palindrome is longer
+// than the current one.
 func (results *Results) UpdateIfLarger(str string) {
 	if newLen := len(str); newLen > results.length {
 		results.length = newLen
@@ -12,6 +16,7 @@ func (results *Results) UpdateIfLarger(str string) {
 	}
 }
 
+// IsPalindrome checks whether a string is a palindrome.
 func IsPalindrome(s string) bool {
 	for i := 0; i < len(s)/2; i++ {
 		if s[i] != s[len(s)-1-i] {

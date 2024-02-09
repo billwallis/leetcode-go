@@ -44,6 +44,15 @@ The items on the first row (row 0) are those whose index is 0 mod n.
 then, the items on row i are those whose index is i or n - i mod n.
 */
 
+// MapIndexToRow maps an index to a row in a zigzag pattern.
+//
+// For `n` rows, the number of items in each repeating segment (`|/`) is
+// `m := 2n - 2`; the items on the first row (row 0) are those whose
+// index is `0 mod m`, and the items on row `i` are those whose index is
+// `i or (m - i) mod m`.
+//
+// Therefore, we can assign the row by taking the current index modulo
+// `m`.
 func MapIndexToRow(number int, modulo int) int {
 	n, m := float64(number), float64(modulo)
 	res := math.Mod(n, m)

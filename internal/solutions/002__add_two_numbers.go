@@ -2,11 +2,13 @@ package solutions
 
 import "fmt"
 
+// ListNode is defined in the LeetCode problem.
 type ListNode struct {
 	Val  int
 	Next *ListNode
 }
 
+// NewListNode converts a slice of integers into a ListNode.
 func NewListNode(numbers []int) *ListNode {
 	if len(numbers) == 0 {
 		return nil
@@ -18,6 +20,7 @@ func NewListNode(numbers []int) *ListNode {
 	}
 }
 
+// Equals checks whether two ListNodes are equal.
 func (ln *ListNode) Equals(other *ListNode) bool {
 	if ln == nil && other == nil {
 		return true
@@ -28,6 +31,7 @@ func (ln *ListNode) Equals(other *ListNode) bool {
 	}
 }
 
+// AsString returns a string representation of a ListNode.
 func (ln *ListNode) AsString() string {
 	if ln == nil {
 		return ""

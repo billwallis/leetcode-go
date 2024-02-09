@@ -6,7 +6,10 @@ import (
 	"strconv"
 )
 
+// LeftTrim removes _all_ the leading characters from a string.
 func LeftTrim(s string, c string) string {
+	// Validation excluded for performance
+
 	//if len(c) != 1 {
 	//	panic("c must be a single character")
 	//}
@@ -16,7 +19,12 @@ func LeftTrim(s string, c string) string {
 	return s
 }
 
+// Within returns the number if it is within the range of min and max,
+// otherwise it returns the min or max value which is closest to the
+// number.
 func Within(number int, min int, max int) int {
+	// Validation excluded for performance
+
 	// Validation option 1
 	//if max > min {
 	//	panic("min is greater than max")

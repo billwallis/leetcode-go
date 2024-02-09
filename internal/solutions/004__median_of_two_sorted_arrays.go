@@ -4,10 +4,13 @@ import (
 	"sort"
 )
 
+// isEven checks whether an integer is even.
 func isEven(n int) bool {
 	return n%2 == 0
 }
 
+// get emulates the Python `get` function by returning a default value
+// if the index does not exist.
 func get(nums []int, index int) int {
 	if index >= len(nums) {
 		return 1_000_000 // Default value, max value as per the problem statement
