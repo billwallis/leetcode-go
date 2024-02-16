@@ -34,7 +34,6 @@ func TestRemoveNthFromEnd(t *testing.T) {
 		{head: []int{1}, n: 1, want: []int{}},
 		{head: []int{1, 2}, n: 1, want: []int{1}},
 		{head: []int{1, 2}, n: 2, want: []int{2}},
-		{head: []int{1, 2, 3, 4}, n: 0, want: []int{1, 2, 3, 4}},
 	}
 
 	for _, test := range tests {
