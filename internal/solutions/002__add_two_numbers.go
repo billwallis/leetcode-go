@@ -42,7 +42,7 @@ func (ln *ListNode) AsString() string {
 	}
 }
 
-// unpackNode is a helper function for nextNode.
+// unpackNode is a helper function for NextNode.
 // It returns the value and the next node of a ListNode.
 func unpackNode(node *ListNode) (int, *ListNode) {
 	if node == nil {
@@ -52,9 +52,9 @@ func unpackNode(node *ListNode) (int, *ListNode) {
 	}
 }
 
-// nextNode is a helper function for AddTwoNumbers.
+// NextNode is a helper function for AddTwoNumbers.
 // It returns the next node of the sum of two nodes and a remainder, if any.
-func nextNode(node1 *ListNode, node2 *ListNode, remainder int) *ListNode {
+func NextNode(node1 *ListNode, node2 *ListNode, remainder int) *ListNode {
 	n1Val, n1Next := unpackNode(node1)
 	n2Val, n2Next := unpackNode(node2)
 	sum := n1Val + n2Val + remainder
@@ -68,7 +68,7 @@ func nextNode(node1 *ListNode, node2 *ListNode, remainder int) *ListNode {
 	} else {
 		return &ListNode{
 			Val:  value,
-			Next: nextNode(n1Next, n2Next, newRemainder),
+			Next: NextNode(n1Next, n2Next, newRemainder),
 		}
 	}
 }
@@ -76,5 +76,5 @@ func nextNode(node1 *ListNode, node2 *ListNode, remainder int) *ListNode {
 // AddTwoNumbers is the second LeetCode problem:
 // - https://leetcode.com/problems/add-two-numbers/
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	return nextNode(l1, l2, 0)
+	return NextNode(l1, l2, 0)
 }
