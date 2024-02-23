@@ -4,34 +4,6 @@ import (
 	"math"
 )
 
-//func Abs(x int) int {
-//	if x < 0 {
-//		return -x
-//	} else {
-//		return x
-//	}
-//}
-
-//func Within(number int, min int, max int) int {
-//	// Validation excluded for performance
-//
-//	// Validation option 1
-//	//if max > min {
-//	//	panic("min is greater than max")
-//	//}
-//
-//	// Validation option 2
-//	//min, max := math.Min(min, max), math.Max(min, max)
-//
-//	if number <= min {
-//		return min
-//	} else if number >= max {
-//		return max
-//	} else {
-//		return number
-//	}
-//}
-
 // divide is the twenty-ninth LeetCode problem:
 // - https://leetcode.com/problems/divide-two-integers/
 func divide(dividend int, divisor int) int {
@@ -41,8 +13,23 @@ func divide(dividend int, divisor int) int {
 
 	var quotient int
 	absDividend, absDivisor := Abs(dividend), Abs(divisor)
-	for quotient = 0; absDividend >= absDivisor; quotient++ {
-		absDividend -= absDivisor
+
+	// Doing subtraction is slow and causing the solution to time out
+	//for quotient = 0; absDividend >= absDivisor; quotient++ {
+	//	absDividend -= absDivisor
+	//}
+
+	// This bitshift business is nicked from:
+	// - https://leetcode.com/problems/divide-two-integers/solutions/1774409/go-succinct-intuitive-100-with-explanation
+	for absDividend >= absDivisor {
+		sub, add := absDivisor, 1
+		// Skip increasing powers of 2
+		for absDividend >= sub<<1 {
+			sub <<= 1
+			add <<= 1
+		}
+		absDividend -= sub
+		quotient += add
 	}
 
 	if (dividend < 0) != (divisor < 0) {
