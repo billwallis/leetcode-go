@@ -1,7 +1,7 @@
 package solutions_test
 
 import (
-	"github.com/Bilbottom/leetcode-go/internal/solutions"
+	"github.com/billwallis/leetcode-go/internal/solutions"
 	"testing"
 )
 

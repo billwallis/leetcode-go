@@ -2,7 +2,7 @@ package solutions_test
 
 import (
 	"fmt"
-	"github.com/Bilbottom/leetcode-go/internal/solutions"
+	"github.com/billwallis/leetcode-go/internal/solutions"
 	"reflect"
 	"slices"
 	"sort"

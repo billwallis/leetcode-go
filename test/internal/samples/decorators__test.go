@@ -1,6 +1,6 @@
 package samples_test
 
-import "github.com/Bilbottom/leetcode-go/internal/samples"
+import "github.com/billwallis/leetcode-go/internal/samples"
 
 func ExamplePostgresStore_Save() {
 	pgStore := samples.PostgresStore{}

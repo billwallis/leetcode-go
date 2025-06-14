@@ -1,7 +1,7 @@
 package samples_test
 
 import (
-	"github.com/Bilbottom/leetcode-go/internal/samples"
+	"github.com/billwallis/leetcode-go/internal/samples"
 	"math"
 	"testing"
 )

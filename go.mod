@@ -1,3 +1,3 @@
-module github.com/Bilbottom/leetcode-go
+module github.com/billwallis/leetcode-go
 
 go 1.22
